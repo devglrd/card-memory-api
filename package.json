@@ -1,0 +1,76 @@
+{
+  "name": "card-memory-api",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
+    "start:debug": "tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/main.js\"",
+    "start:prod": "node dist/main.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.3.1",
+    "@nestjs/core": "^6.3.1",
+    "@nestjs/jwt": "^6.1.1",
+    "@nestjs/passport": "^6.1.0",
+    "@nestjs/platform-express": "^6.3.1",
+    "@nestjs/swagger": "^3.0.2",
+    "@nestjs/typeorm": "^6.1.2",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.9.1",
+    "compression": "^1.7.4",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.0.0",
+    "mysql": "^2.17.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.2",
+    "swagger-ui-express": "^3.0.10",
+    "rimraf": "^2.6.2",
+    "typeorm": "^0.2.17"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^6.3.1",
+    "@types/express": "^4.17.0",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.3",
+    "@types/swagger-ui-express": "^3.0.0",
+    "@types/supertest": "^2.0.7",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.17.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.0",
+    "ts-loader": "^6.0.1",
+    "ts-node": "^8.2.0",
+    "tsc-watch": "^2.2.1",
+    "tsconfig-paths": "^3.8.0",
+    "tslint": "5.14.0",
+    "typescript": "^3.5.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
