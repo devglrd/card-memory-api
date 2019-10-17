@@ -1,6 +1,6 @@
 version: '3.5'
 services:
-  nest-api:
+  card-api:
     image: glrd/card-memory-api
     build:
       context: ./
@@ -11,7 +11,7 @@ services:
     links:
       - nest-mysql
     ports:
-      - "3000:3000"
+      - "3002:3000"
 
   nest-mysql:
     image: mysql:5.7
@@ -20,4 +20,4 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=card-memory
     ports:
-      - 3306:3306
+      - 3308:3306
